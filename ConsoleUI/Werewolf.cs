@@ -8,6 +8,7 @@ namespace AbstractClasses
 {
     class Werewolf : Monster
     {
+        //This is the overridden method for the werewolf
         public override void Attack()
         {
             Console.WriteLine("Looks like you were scratched by a werewolf... You take 22 pts damage and you've been frightened," +

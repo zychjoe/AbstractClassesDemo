@@ -8,9 +8,9 @@ namespace AbstractClasses
 {
     abstract class Monster
     {
-        public string _name = "Generic Monster";
-        public float _baseHP = 100f;
-        public bool _isBoss = false;
+        public string Name = "Generic Monster";
+        public float BaseHP = 100f;
+        public bool IsBoss = false;
         
         public virtual void Attack()
         {

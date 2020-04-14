@@ -8,6 +8,7 @@ namespace AbstractClasses
 {
     class MadScientist : Monster
     {
+        //This calls the base attack method
         public override void Attack()
         {
             base.Attack();
