@@ -15,16 +15,16 @@ namespace AbstractClasses
             NumberOfTires = 2;
         }
 
-        public override void DriveAbstract(Vehicle vehicle)
+        public override void DriveAbstract()
         {
-            Console.WriteLine($"I'm driving in an abstract method");
+            Console.WriteLine($"I'm driving a {GetType().Name} which is a {GetType().BaseType} in an abstract method");
         }
 
-        public override void DriveVirtual(Vehicle vehicle)
+        public override void DriveVirtual()
         {
             //This will keep the base implementation
             //Plus anything you add to this method
-            base.DriveVirtual(vehicle);
+            base.DriveVirtual();
         }
     }
 }

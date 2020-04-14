@@ -10,16 +10,18 @@ namespace AbstractClasses
     {
         public int NumberOfWindows { get; set; }
 
-        public override void DriveVirtual(Vehicle vehicle)
+        public override void DriveAbstract()
+        {
+            Console.WriteLine($"I'm driving a {GetType().Name} in an abstract method, it is a {GetType().BaseType.Name}");
+        }
+
+        public override void DriveVirtual()
         {
             //this will keep the base implementation plus anything you add in this class
             //base.Drive(vehicle);
-            Console.WriteLine($"I am driving my car, it is a {vehicle.Make} {vehicle.Model}"); // overridding the base implementation
-        }
 
-        public override void DriveAbstract(Vehicle vehicle)
-        {
-            throw new NotImplementedException();
-        }
+            //overridding the base implementation
+            Console.WriteLine($"I'm driving a {GetType().Name} in a virtual method, it is a {GetType().BaseType.Name}"); 
+        }        
     }
 }

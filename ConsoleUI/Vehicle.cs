@@ -15,12 +15,12 @@ namespace AbstractClasses
 
         //Using abstract means you MUST provide the override keyword
         //and an implementation in the derived class        
-        public abstract void DriveAbstract(Vehicle vehicle);
+        public abstract void DriveAbstract();
 
         //Using virtual means you DO NOT have to provide an override in the derived class
-        public virtual void DriveVirtual(Vehicle vehicle) 
+        public virtual void DriveVirtual() 
         {
-            Console.WriteLine($"I am driving my vehicle, it is a: {vehicle.Make} {vehicle.Model}");
+            Console.WriteLine("I'm driving my vehicle");
         }
     }
 }

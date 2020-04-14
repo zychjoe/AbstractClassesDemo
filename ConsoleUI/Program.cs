@@ -11,13 +11,13 @@ namespace AbstractClasses
         static void Main(string[] args)
         {
             #region Vehicles
-            //Create a list of vehicles called vehicles
+
             List<Vehicle> vehicles = new List<Vehicle>();
 
             Vehicle car1 = new Car() { Year = "2016", Make = "BMW", Model = "328i", NumberOfTires = 4, NumberOfWindows = 5 };
             Car car2 = new Car() { Year = "1999", Make = "Dodge", Model = "Dekota", NumberOfTires = 4, NumberOfWindows = 2 };
-            Vehicle motor1 = new Motorcycle() { Year = "2005", Make = "Vulcan", Model = "Trumph", EngineNoise = "Vrrrrooooom" };
-            Motorcycle motor2 = new Motorcycle(); // Not setting any properties, this will reflect the base
+            Motorcycle motor1 = new Motorcycle() { Year = "2005", Make = "Vulcan", Model = "Trumph", EngineNoise = "Vrrrrooooom" };
+            Vehicle motor2 = new Motorcycle(); // Not setting any properties, this will reflect the base defaults
 
             vehicles.Add(car1);
             vehicles.Add(car2);
@@ -26,34 +26,23 @@ namespace AbstractClasses
 
             foreach (var item in vehicles)
             {
-                Console.WriteLine($"{item.Year} {item.Make} {item.Model}"); // Show here that only Vehicle members are present
+                // Show here that only Vehicle members are present
+                Console.WriteLine($"{item.Year} {item.Make} {item.Model}"); 
+                Console.WriteLine();
             }
 
-            Console.ReadLine();
+            //These methods use the GetType() to stay flexible
+            car1.DriveAbstract();
+            Console.WriteLine();
+            car1.DriveVirtual();
+            Console.WriteLine();
+            motor1.DriveAbstract();
+            Console.WriteLine();
+            motor1.DriveVirtual();
+
             #endregion
-
-            #region Monsters
-
-            List<Monster> enemies = new List<Monster>();
-
-            //Monster genericMonster = new Monster(); This is not allowed. Cannot create an instance of an abstract class
-
-            Monster zombie = new Zombie() { BaseHP = 75, Name = "Zombie Man" };
-            Monster wereWolf = new Werewolf() { BaseHP = 125, Name = "Wolf Man", IsBoss = true };
-            Monster scientist = new MadScientist(); // Not setting any properties, this will reflect the base
-
-            enemies.Add(zombie);
-            enemies.Add(wereWolf);
-            enemies.Add(scientist);
-
-            foreach (var monster in enemies)
-            {
-                Console.WriteLine($"{monster.Name} attacks! Their Hp is: {monster.BaseHP}, is a boss: {monster.IsBoss}");
-                monster.Attack();
-            }
-
+            
             Console.ReadLine();
-            #endregion
         }
     }
 }
