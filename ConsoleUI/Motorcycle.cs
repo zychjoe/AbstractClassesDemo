@@ -19,5 +19,12 @@ namespace AbstractClasses
         {
             Console.WriteLine($"I'm driving in an abstract method");
         }
+
+        public override void DriveVirtual(Vehicle vehicle)
+        {
+            //This will keep the base implementation
+            //Plus anything you add to this method
+            base.DriveVirtual(vehicle);
+        }
     }
 }
