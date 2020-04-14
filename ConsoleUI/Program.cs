@@ -10,50 +10,43 @@ namespace AbstractClasses
     {
         static void Main(string[] args)
         {
+            /*
+             * Todo follow all comments in each section! 
+             */
+
             #region Vehicles
-            //Create a list of vehicles called vehicles
-            List<Vehicle> vehicles = new List<Vehicle>();
 
-            Vehicle car1 = new Car() { Year = "2016", Make = "BMW", Model = "328i", NumberOfTires = 4, NumberOfWindows = 5 };
-            Car car2 = new Car() { Year = "1999", Make = "Dodge", Model = "Dekota", NumberOfTires = 4, NumberOfWindows = 2 };
-            Vehicle motor1 = new Motorcycle() { Year = "2005", Make = "Vulcan", Model = "Trumph", EngineNoise = "Vrrrrooooom" };
-            Motorcycle motor2 = new Motorcycle(); // Not setting any properties, this will reflect the base
+            /*
+             * Create an abstract class called Vehicle
+             * The vehicle class shall have three string properties Year, Make, and Model
+             * Set the defaults to something generic in the Vehicle class
+             * Vehicle shall have an abstract method called DriveAbstract with no implementation
+             * Vehicle shall have a virtual method called DriveVirtual with a base implementation.
+             */
 
-            vehicles.Add(car1);
-            vehicles.Add(car2);
-            vehicles.Add(motor1);
-            vehicles.Add(motor2);
+            /* 
+             * Now create 2 non-abstract classes: Car and Motorcycle, that inherit from Vehicle
+             * Add a distict property in the 2 derived classes such as HasTrunk for Car and HasSideCart for Motorcycle
+             * Provide the implementations for the abstract methods
+             * Only in the Motorcycle class will you override the virtual drive method
+            */
 
-            foreach (var item in vehicles)
-            {
-                Console.WriteLine($"{item.Year} {item.Make} {item.Model}"); // Show here that only Vehicle members are present
-            }
+            // Create a list of Vehicle called vehicles
 
+            /*
+             * Create 4 instances, 1 Car, 1 Motorcycle, and then 2 Vehicles - new it up as one of each derived class
+             * Set the properties with object initializer syntax
+             */
+
+            /*
+             * Add the 4 vehicles to the list
+             * Using a foreach loop iterate over each of the properties
+             */
+
+            // Call each of the drive methods for one car and one motorcycle
+
+            #endregion            
             Console.ReadLine();
-            #endregion
-
-            #region Monsters
-
-            List<Monster> enemies = new List<Monster>();
-
-            //Monster genericMonster = new Monster(); This is not allowed. Cannot create an instance of an abstract class
-
-            Monster zombie = new Zombie() { BaseHP = 75, Name = "Zombie Man" };
-            Monster wereWolf = new Werewolf() { BaseHP = 125, Name = "Wolf Man", IsBoss = true };
-            Monster scientist = new MadScientist(); // Not setting any properties, this will reflect the base
-
-            enemies.Add(zombie);
-            enemies.Add(wereWolf);
-            enemies.Add(scientist);
-
-            foreach (var monster in enemies)
-            {
-                Console.WriteLine($"{monster.Name} attacks! Their Hp is: {monster.BaseHP}, is a boss: {monster.IsBoss}");
-                monster.Attack();
-            }
-
-            Console.ReadLine();
-            #endregion
         }
     }
 }
