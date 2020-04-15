@@ -17,7 +17,7 @@ namespace AbstractClasses
 
         public override void DriveAbstract()
         {
-            Console.WriteLine($"I'm driving a {GetType().Name} which is a {GetType().BaseType} in an abstract method");
+            Console.WriteLine($"I'm driving a {GetType().Name} which is a {GetType().BaseType.Name} in an abstract method");
         }
 
         public override void DriveVirtual()
