@@ -11,7 +11,7 @@ namespace AbstractClasses
         static void Main(string[] args)
         {
             /*
-             * Todo follow all comments in each section! 
+             * Todo follow all comments!! 
              */
 
             #region Vehicles
