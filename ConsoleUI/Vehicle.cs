@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractClasses
+namespace ConsoleUI
 {
     abstract class Vehicle //: IVehicle Can demo this in the Interfaces lesson
     {

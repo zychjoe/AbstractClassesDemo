@@ -1,4 +1,4 @@
-﻿namespace AbstractClasses
+﻿namespace ConsoleUI
 {
     interface IVehicle
     {
