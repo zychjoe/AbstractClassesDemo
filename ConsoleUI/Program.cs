@@ -10,44 +10,40 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
 
-            #region Vehicles
-
-            /*
-             * Create an abstract class called Vehicle
-             * The vehicle class shall have three string properties Year, Make, and Model
-             * Set the defaults to something generic in the Vehicle class
-             * Vehicle shall have an abstract method called DriveAbstract with no implementation
-             * Vehicle shall have a virtual method called DriveVirtual with a base implementation.
-             */
-
-            /* 
-             * Now create 2 non-abstract classes: Car and Motorcycle, that inherit from Vehicle
-             * Add a distict property in the 2 derived classes such as HasTrunk for Car and HasSideCart for Motorcycle
-             * Provide the implementations for the abstract methods
-             * Only in the Motorcycle class will you override the virtual drive method
-            */
+            #region Vehicle
 
             // Create a list of Vehicle called vehicles
 
-            /*
-             * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
-             * - new it up as one of each derived class
-             * Set the properties with object initializer syntax
-             */
+            Car chevy = new Car("1990", "Chevrolet", "Cavalier");
+            Motorcycle yammy = new Motorcycle("2020", "Yamaha", "Freerider");
+            Vehicle saturn = new Car() { Year = "1995", Make = "Saturn", Model = "Sedan" };
+            Vehicle harley = new Motorcycle() { Year = "2000", Make = "Harley Davidson", Model = "Sportster" };
 
-            /*
-             * Add the 4 vehicles to the list
-             * Using a foreach loop iterate over each of the properties
-             */
+            List<Vehicle> vehicleList = new List<Vehicle>();
+
+            vehicleList.Add(chevy);
+            vehicleList.Add(yammy);
+            vehicleList.Add(saturn);
+            vehicleList.Add(harley);
+
+            foreach (Vehicle v in vehicleList)
+            {
+                Console.WriteLine($"Now this is a nice vehicle.");
+                Console.WriteLine($"It's year is {v.Year}");
+                Console.WriteLine($"It's make is {v.Make}");
+                Console.WriteLine($"It's model is {v.Model}");
+                Console.WriteLine($"And that's that vehicle.");
+
+            }
 
             // Call each of the drive methods for one car and one motorcycle
+            chevy.DriveAbstract();
+            chevy.DriveVirtual();
+            harley.DriveAbstract();
+            harley.DriveVirtual();
 
             #endregion            
-            Console.ReadLine();
         }
     }
 }
